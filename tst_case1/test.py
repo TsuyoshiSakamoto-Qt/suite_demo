@@ -10,3 +10,8 @@ def main():
     snooze(0.5)
     mouseClick(waitForObject(names.hello_World_push_me_Button), Qt.LeftButton)
     test.compare(str(waitForObjectExists(names.hello_World_text1_Text).text), "clicked!")
+
+
+    # OCR and mouseClick 
+    # mouseClick(waitForOcrText("PUSH ME!"))
+    # test.compare(str(waitForObjectExists(names.hello_World_clicked_Text).text), "clicked!")

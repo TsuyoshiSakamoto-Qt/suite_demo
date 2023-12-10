@@ -1,11 +1,19 @@
 # -*- coding: utf-8 -*-
 
 import names
+from toplevelwindow import *
 
 
 def main():
     startApplication("testQML")
-    mouseClick(waitForObject(names.hello_World_push_me_Button), Qt.LeftButton)
-    mouseClick(waitForObject(names.hello_World_screen01_ui), 214, 232, Qt.LeftButton)
-    test.vp("VP1")
+    # win = waitForObject(names.hello_World_QQuickWindowQmlImpl)
+    
+    snooze(3)
+    
+    win = ToplevelWindow.byName(names.hello_World_QQuickWindowQmlImpl)
+    # ToplevelWindow.setForeground(win)
+    ToplevelWindow.setFullscreen(win)
+    geom = win.geometry
+    test.log("Focused window is " + str(geom.width) + " by " + str(geom.height))
+    
     
