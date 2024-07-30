@@ -5,13 +5,16 @@ import names
 
 def main():
     startApplication("testQML")
+    # startApplication("testQML", "127.0.0.1", 4322)
 
-    test.compare(str(waitForObjectExists(names.hello_World_text1_Text).text), "default text")
-    snooze(0.5)
-    mouseClick(waitForObject(names.hello_World_push_me_Button), Qt.LeftButton)
-    test.compare(str(waitForObjectExists(names.hello_World_text1_Text).text), "clicked!")
-
-
-    # OCR and mouseClick 
-    # mouseClick(waitForOcrText("PUSH ME!"))
-    # test.compare(str(waitForObjectExists(names.hello_World_clicked_Text).text), "clicked!")
+    test.compare(str(waitForObjectExists(names.hello_World_labelText1_Text).text), "default text")
+    snooze(1)
+    mouseClick(waitForObject(names.hello_World_push_me_Button), 109, 21, Qt.LeftButton)
+    snooze(1)
+    test.compare(str(waitForObjectExists(names.hello_World_labelText1_Text).text), "clicked!")
+    
+    obj = waitForObjectExists(names.hello_World_labelText1_Text)
+    obj.text = "modified by squish!"
+    
+    snooze(3)
+    

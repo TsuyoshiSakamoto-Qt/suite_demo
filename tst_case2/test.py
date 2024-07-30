@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import names
-from toplevelwindow import *
-
 
 def main():
-    startApplication("testQML")
-    # win = waitForObject(names.hello_World_QQuickWindowQmlImpl)
     
-    snooze(3)
-    
-    win = ToplevelWindow.byName(names.hello_World_QQuickWindowQmlImpl)
-    # ToplevelWindow.setForeground(win)
-    ToplevelWindow.setFullscreen(win)
-    geom = win.geometry
-    test.log("Focused window is " + str(geom.width) + " by " + str(geom.height))
-    
-    
+    for i in range(3):
+        startApplication("testQML")
+        mouseClick(waitForObject(names.hello_World_push_me_Button), Qt.LeftButton)
+        test.compare(str(waitForObjectExists(names.hello_World_labelText1_Text).text), "clicked!")
+        for ctx in applicationContextList():
+            ctx.detach()
+        test.log("application detached:" + str(i))
+        snooze(2)
+
+    snooze(1)
+
