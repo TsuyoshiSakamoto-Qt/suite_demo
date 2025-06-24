@@ -2,15 +2,18 @@
 
 import names
 
+source(findFile("scripts", "function.py"))
 
 def main():
-    startApplication("testQML")
+    appContext = startApplication("testQML")
     test.compare(str(waitForObjectExists(names.hello_World_labelText1_Text).text), "default text")
     mouseClick(waitForObject(names.hello_World_push_me_Button),  Qt.LeftButton)
+    
     test.compare(str(waitForObjectExists(names.hello_World_labelText1_Text).text), "clicked!")
     
     # wait until "push me button" clicked.
     # test.compare(str(waitForObjectExists(names.hello_World_labelText1_TextSearch).text), "clicked!")
-
+    # test.log(appContext.readStderr())
     
+    my_function()
     
