@@ -23,3 +23,5 @@ hello_World_button_switch_Switch_4 = {"checkable": True, "container": hello_Worl
 hello_World_button_switch_Switch_5 = {"checkable": True, "container": hello_World_QQuickWindowQmlImpl, "id": "button_switch", "occurrence": 5, "text": "", "type": "Switch", "unnamed": 1, "visible": True}
 hello_World_comboBox_ComboBox = {"container": hello_World_QQuickWindowQmlImpl, "id": "comboBox", "type": "ComboBox", "unnamed": 1, "visible": True}
 hello_World_circle_white_Image = {"container": hello_World_QQuickWindowQmlImpl, "id": "circle_white", "source": "images/account_circle_white.png", "type": "Image", "unnamed": 1, "visible": True}
+hello_World_qt_logo_jpg_Image = {"container": hello_World_QQuickWindowQmlImpl, "id": "qt_logo_jpg", "type": "Image", "unnamed": 1, "visible": True}
+hello_World_qt_logo_bmp_Image = {"container": hello_World_QQuickWindowQmlImpl, "id": "qt_logo_bmp", "source": "images/qt-logo_2.png", "type": "Image", "unnamed": 1, "visible": True}

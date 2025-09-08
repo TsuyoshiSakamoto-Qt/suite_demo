@@ -18,9 +18,9 @@ def main():
     obj = waitForObjectExists(names.hello_World_labelText1_Text)
     obj.text = "modified by squish!"
     
-    path = os.getcwd()
-    test.log(path)
-    print(path)
+    # path = os.getcwd()
+    # test.log(path)
+    # print(path)
     
     snooze(3)
     
